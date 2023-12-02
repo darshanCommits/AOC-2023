@@ -30,8 +30,7 @@ export const getFirstAndLastString = (array) => {
 	return [first, last]
 };
 
-export const wordRegex = /(one|two|three|four|five|six|seven|eight|nine)/g;
-export const reverseRegex = /(one|two|three|four|five|six|seven|eight|nine)(?!.*\1)/g;
+const numPattern = ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine'].join('|')
 
-
-
+export const wordRegex = new RegExp(numPattern, 'g');
+export const reverseRegex = new RegExp(numPattern + '(?!.*\\1)', 'g');

@@ -1,4 +1,4 @@
-import { input, getFirstAndLastString } from "./app";
+import { input, getFirstAndLastString} from "./app";
 
 const solution1 = input
 	.split("\n")
