@@ -1,20 +1,10 @@
-import { input, getFirstAndLastString} from "./app";
+import { input } from "./app";
 
-const solution1 = input
-	.split("\n")
-	.map(line => line
-		.split("")
-		.filter((ch) => !ch.match(/\D/)))
-	.map(chars => parseInt(getFirstAndLastString(chars)
-		.join("")))
-	.reduce((a, b) => a + b, 0);
-
-const solution2 = input
+const solution2 = input.trim()
 	.split("\n")
 	.map(line => line
 		.replace(/\D/g, _ => ""))
-	.map(chars => parseInt(getFirstAndLastString(chars)
-		.join("")))
+	.map(chars => parseInt(chars.at(0) + chars.at(-1)))
 	.reduce((a, b) => a + b, 0);
 
-console.log({solution1, solution2});
+console.log(solution2);

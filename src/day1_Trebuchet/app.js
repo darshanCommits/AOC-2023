@@ -21,16 +21,6 @@ export const mapping = {
 	nine: 'ni9e',
 };
 
-export const getFirstAndLastString = (array) => {
-	let first = array[0];
-	let last = array[array.length - 1];
-	if (!first) first = 0;
-	if (!last) last = first;
-
-	return [first, last]
-};
-
-const numPattern = ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine'].join('|')
-
-export const wordRegex = new RegExp(numPattern, 'g');
+export const numPattern = ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine'].join('|')
+export const wordRegex = new RegExp(numPattern, '');
 export const reverseRegex = new RegExp(`${numPattern}(?!.*\\1)`, 'g');
