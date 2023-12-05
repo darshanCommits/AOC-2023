@@ -33,4 +33,4 @@ export const getFirstAndLastString = (array) => {
 const numPattern = ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine'].join('|')
 
 export const wordRegex = new RegExp(numPattern, 'g');
-export const reverseRegex = new RegExp(numPattern + '(?!.*\\1)', 'g');
+export const reverseRegex = new RegExp(`${numPattern}(?!.*\\1)`, 'g');
