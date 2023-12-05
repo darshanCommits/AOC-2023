@@ -14,8 +14,7 @@ const solution = input.trim().split("\n")
 	    g: Math.max(acc.g, obj.g),
 	    b: Math.max(acc.b, obj.b),
 		}), { r: 0, g: 0, b: 0 }))
-	.map((clr) => clr.r <= 12 && clr.g <= 13 && clr.b <= 14)
-	.map((bool, index) => (bool ? index + 1 : 0))
-	.reduce((acc, item) => acc + item, 0);
+		.map(obj => Object.values(obj).reduce((acc, curr) => acc*curr, 1))
+		.reduce((acc, curr) => acc+ curr, 0);
 
 console.log(solution);
