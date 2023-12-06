@@ -1,18 +1,10 @@
-import { input } from "./app";
+import { exampleInput, input } from "./app";
 
 const result = input.trim().split("\n")
-  .map((line) => line
-    .replace(/[^:]*:/, _ => ""))
   .map(game => game
-    .split("|")
-    .map(round => round.trim())
-    .join(' ')
-    .split(/\s+/)
+    .match(/[^\s|]+/g)
     .filter((elem, num, arr) => arr
-      .indexOf(elem) !== num))
-  .map(x => x.length)
-  .filter(x => x)
-  .map(x => 2 ** (x - 1))
-  .reduce((acc, item) => acc + item, 0);
+      .indexOf(elem) !== num).length)
+  .reduce((acc, x) => acc + (x ? 2 ** (x - 1) : 0), 0);
 
 console.log(result);
